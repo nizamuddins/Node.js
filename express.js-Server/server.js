@@ -20,7 +20,7 @@ res.send('your bmi is '+bmi)
 })
 
 
-
+// OK bye 
 app.listen(3000,()=>{
 console.log('server is active')
 })
