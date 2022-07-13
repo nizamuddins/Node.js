@@ -1,35 +1,45 @@
-const express = require("express");
+const express = require('express');
+const https = require('https')
+
+const bodyParser = require('body-parser')
 
 const app = express();
 
-const https = require('https')
+app.use(bodyParser.urlencoded({extended:true}))
 app.get('/',(req,res)=>{
 
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=hyderabad&units=metric&appid=c0f545e348cdc913806ccf7e123b6117"
+res.sendFile(__dirname+'/index.html');
+})
 
-    https.get(url,(response)=>{
-       console.log(response.statusCode)
-   response.on('data',(data)=>{
-       const weather = JSON.parse(data)
-   const temp = weather.main.temp;
-const description = weather.weather[0].description;
-const icon = weather.weather[0].icon
-const url2 = 'http://openweathermap.org/img/wn/'+ icon+'@2x.png';
 
-res.write("<p>current weather condition is " + description +"</p>");
-res.write("<h2>Temp of hyderabad is " + temp + "</h2>");
-res.write("<img src="+url2+">")
+app.post('/',(req,res)=>{
+const query = req.body.cityname;
+const units = 'metric';
+const appid = 'c0f545e348cdc913806ccf7e123b6117';
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q='+query+'&units='+units+'&appid='+appid
+
+https.get(url,(response)=>{
+
+response.on('data',(data)=>{
+
+const weather = JSON.parse(data);
+const temp = weather.main.temp;
+const city = weather.name
+res.write(`<h1>temperature of ${query} is ${temp} </h1>`);
+res.write(`<h3>City Name:${city}</h3>`);
+const image = weather.weather[0].icon;
+const img = `http://openweathermap.org/img/wn/${image}@2x.png`
+res.write(`<img src=${img}>`)
 res.send();
-
 })
-   
-   })
 
 })
 
+
+})
 
 
 
 app.listen(3000,()=>{
-    console.log("The server is activated")
+    console.log('seerver is started')
 })
