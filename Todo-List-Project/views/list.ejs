@@ -5,11 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-do-list</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  
-<h1 style="color: green"><%= days %></h1>
+  <div class="box">
+    <h1 class="head"><%= days %></h1>
+    <div class="listBox">
+        <% for(i=0;i<newItem.length;i++){ %>
 
-    
+    <ul class="ul">
+            <input type="checkbox" name="" id="">
+              <p class="list">
+                <%= newItem[i] %>
+              </p>  
+    </ul>
+    <% } %>
+
+    </div>
+    <form action="/" method="post" class="form">
+        <input type="text" name="text" id="" autocomplete="off">
+        <input type="submit" name="submit" id="" value="">
+        </form> 
+  </div>
+
+
+
 </body>
 </html>
