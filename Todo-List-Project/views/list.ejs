@@ -9,22 +9,25 @@
 </head>
 <body>
   <div class="box">
-    <h1 class="head"><%= days %></h1>
-    <div class="listBox">
+       <h1 class="head"><%= days %></h1>
+      <div class="listBox">
         <% for(i=0;i<newItem.length;i++){ %>
 
-    <ul class="ul">
+        <ul class="ul">
             <input type="checkbox" name="" id="">
               <p class="list">
                 <%= newItem[i] %>
               </p>  
-    </ul>
-    <% } %>
+        </ul>
+        <% } %>
 
-    </div>
-    <form action="/" method="post" class="form">
-        <input type="text" name="text" id="" autocomplete="off">
-        <input type="submit" name="submit" id="" value="">
+      </div>
+        <form action="/" method="post" class="form">
+        <input type="text" name="text" id="" placeholder="Next item" autocomplete="off">
+        <span class="submit">
+          <input type="submit" name="submit" id="" value="+">
+        
+        </span>
         </form> 
   </div>
 
