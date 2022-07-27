@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#header{
+    background-color: rgb(239, 234, 234);
+}
+
+.navbar-brand{
+    letter-spacing: 2px;
+font-weight: 500;
+}
+
+.nav-link{
+    letter-spacing: 2px;
+    color: #000;
+    
+}
+.formtext{
+    font-weight: 600;
+    color: rgb(57, 56, 56);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+input[type='text']{
+width: 98%;
+}

@@ -1,0 +1,19 @@
+<%- include('partial/header') -%>
+
+<section id="body">
+    <div class="container ps-4">
+        <h1 class="mt-4 mb-2">Home</h1>
+        <p class="m-0"><%= para %></p>
+
+    </div>
+</section>
+<section id="body">
+    <div class="container ps-4">
+        <% for(let i=0;i<array.length;i++){ %>
+        <h2 class="mt-4 mb-2"><%= array[i].text %></h2>
+        <p class="m-0"><%= array[i].postbody %></p>
+       <% } %>
+    </div>
+</section>
+
+<%- include('partial/footer') -%>

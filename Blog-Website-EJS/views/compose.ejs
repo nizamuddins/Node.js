@@ -1,0 +1,21 @@
+<%- include('partial/header') -%>
+
+<section id="body">
+    <div class="container ps-4">
+        <h1 class="mt-4 mb-2">Compose</h1>
+<form action="/compose" method="post" class="mt-4">
+    <label for="" class="d-block fs-6 formtext">Title</label>
+    <input type="text" name="text" class=" mt-2" id="">
+   
+    <label for="" class="d-block fs-6 formtext mb-2">Post</label>
+    <textarea name="postbody" id="" cols="165" rows="7"></textarea>
+
+<button type="submit" class="d-block btn btn-primary">publish</button>
+
+</form>
+
+    </div>
+</section>
+
+
+<%- include('partial/footer') -%>

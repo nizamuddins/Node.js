@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const date = require(__dirname + '/app2.js')
 const app = express();
 
 var items =[];
@@ -9,11 +10,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{
-    const date = new Date();
- const options={
-    weekday: 'long',month: 'long', day: 'numeric' 
-};
-const day = date.toLocaleDateString('en-US',options)
+ const day = date.days();
 
 res.render('list',{days:day,newItem:items});
  
