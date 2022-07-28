@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+var _ = require('lodash');
+
 const app = express();
 
 const startingStatement = "Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical. Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned to recognize certain patterns and repetitions in texts. If the distribution of letters and 'words' is random, the reader will not be distracted from making a neutral judgement on the visual impact and readability of the typefaces (typography), or the distribution of text on the page (layout or type area). For this reason, dummy text usually consists of a more or less random series of words or syllables. "
@@ -28,14 +30,28 @@ app.get('/compose',(req,res)=>{
     res.render('compose');
             
     })
-app.get('/posts/:testing',(req,res)=>{
-console.log(req.params.testing)
+app.get('/posts/:parameter',(req,res)=>{
+const parameter = _.lowerCase(req.params.parameter)
+
+array.forEach((a)=>{
+    const a1 = _.lowerCase(a.text)
+
+    const a2 = a.text;
+    const a3 = a.postbody;
+    
+    if(a1 === parameter){
+
+    res.render('another-posts' ,{head:a2,para:a3});
+
+    }
+})
+   
+
 })
 app.post('/compose',(req,res)=>{
 var content = {
        text:req.body.text,
        postbody:req.body.postbody,
-
 }
 array.push(content);
 res.redirect('/')
@@ -43,6 +59,6 @@ res.redirect('/')
 })
 
 
-app.listen(4000,()=>{
+app.listen(5000,()=>{
     console.log("server is activated")
 })
