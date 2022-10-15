@@ -9,4 +9,10 @@ const dataSchema2 = mongoose.Schema({
 })
 let db2 = mongoose.model("work",dataSchema2)
 
-module.exports = {db1,db2}
+const dataSchema3 = mongoose.Schema({
+    name:String,
+    text:[Object] 
+})
+let db3 = mongoose.model("params",dataSchema3)
+
+module.exports = {db1,db2,db3}
