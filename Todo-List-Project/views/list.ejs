@@ -1,25 +1,24 @@
 <%- include('header') -%>
-  <div class="box">
-       <h1 class="head"><%= days %></h1>
-      <div class="listBox">
-        <% for(i=0;i<newItem.length;i++){ %>
+    <div class="box">
+        <h1 class="head"><%= days %></h1>
+        <div class="listBox">
+            <% for(i=0;i<newItem.length;i++){ %>
 
-        <ul class="ul">
+                <ul class="ul">
+                    <form action="/delete" method="post">
+                        <input type="checkbox" name="checkbox" value=<%= newItem[i]._id %> onChange="this.form.submit()" id="">
+                        <p class="list">
+                            <%= newItem[i].text %>
+                        </p>
+                    </form>
 
-            <input type="checkbox" name="" id="">
-              <p class="list">
-                <%= newItem[i] %>
-              </p><br>
-        </ul>
-        <% } %>
+                </ul>
+            <% } %>
 
-      </div>
-        <form action="/" method="post" class="form" >
-        <input type="text" name="text" id="" placeholder="Next item" autocomplete="off">
-         <button type="submit" class="submit" name="button" value = <%= days %> >+</button>
-      </form> 
-  </div>
-  <%- include('footer') -%>
-
-
-
+        </div>
+        <form action="/" method="post" class="form">
+            <input type="text" name="text" id="" placeholder="Next item" autocomplete="off">
+            <button type="submit" class="submit" name="button" value=<%= days %>>+</button>
+        </form>
+    </div>
+    <%- include('footer') -%>
