@@ -11,7 +11,7 @@
     <div class="container ps-4">
         <% for(let i=0;i<array.length;i++){ %>
         <h2 class="mt-4 mb-2"><%= array[i].text %></h2>
-        <p class="m-0"><%= array[i].postbody.substring(0,100) %>..... <a href="/posts/:<%= array[i].text %>">Read More</a> </p>
+        <p class="m-0"><%= array[i].essay.substring(0,100) %>..... <a href="/posts/<%= array[i]._id %>">Read More</a> </p>
        <% } %>
     </div>
 </section>
