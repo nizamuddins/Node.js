@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const date = require('./app2')
 const config = require("./config");
 const mongoose = require('./mongoose');
+const port = process.env.PORT || 3000;
 const app = express();
 
 var items;
@@ -106,7 +107,6 @@ if(param !== 'app2.js'&& param !== "favicon.ico"){
 let find = await mongoose.db3.find({name:param});
 let find2 = await mongoose.db3.find({});
 defaultItems = find2;
-console.log(defaultItems)
 if(find2.length === 0){
     let listItems = new mongoose.db3({text:"Welcome to your todolist!"});
     let listItems1 = new mongoose.db3({text:"Hit the + to add new item"});
@@ -127,7 +127,7 @@ if(find2.length === 0){
 
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server is started");
 })
 
