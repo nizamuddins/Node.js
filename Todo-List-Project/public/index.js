@@ -39,3 +39,37 @@ if(window.innerWidth < 1426){
 
 }
 })
+
+let head = $(".head").text()
+
+if(head == "Home"){
+    body.css("background-image",`url("images/home.jpg")`);
+    body.css("background-size",`cover`);
+    $('.head').css("background-color","#ff3a3a");
+    $('.submit').css("background-color","#ff3a3a");
+
+}else if(head == "Work"){
+    body.css("background-image",`url("images/work.jpg")`);
+    body.css("background-size",`cover`);
+ 
+    $('.head').css("background-color","#ff3a3a");
+    $('.submit').css("background-color","#ff3a3a");
+}else if(head == "Meeting"){
+    body.css("background-image",`url("images/meeting.jpg")`);
+    body.css("background-size",`cover`);
+ 
+    $('.head').css("background-color","#ff3a3a");
+    $('.submit').css("background-color","#ff3a3a");
+}else if(head == "ToPurchase"){
+    body.css("background-image",`url("images/purchase.jpg")`);
+    body.css("background-size",`cover`);
+ 
+    $('.head').css("background-color","#ff3a3a");
+    $('.submit').css("background-color","#ff3a3a");
+}else if(head == "ToStudy"){
+    body.css("background-image",`url("images/study.jpg")`);
+    body.css("background-size",`cover`);
+ 
+    $('.head').css("background-color","#ff3a3a");
+    $('.submit').css("background-color","#ff3a3a");
+}
