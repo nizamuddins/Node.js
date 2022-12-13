@@ -1,21 +1,20 @@
 <%- include('partial/header') -%>
 
-<section id="body">
-    <div class="container ps-4">
-        <h1 class="mt-4 mb-2">Compose</h1>
-<form action="/compose" method="post" class="mt-4">
-    <label for="" class="d-block fs-6 formtext">Title</label>
-    <input type="text" name="text" class=" mt-2" id="">
-   
-    <label for="" class="d-block fs-6 formtext mb-2">Post</label>
-    <textarea name="essay" id="" cols="165" rows="7"></textarea>
+    <section id="body">
+        <div class="container ps-4">
+            <h1 class="mt-4 mb-2" style="color: rgb(223, 223, 223);">Compose</h1>
+            <form action="/compose" method="post" class="mt-4">
+                <label for="" class="d-block fs-6 formtext" style="color: rgb(223, 223, 223);">Title</label>
+                <input type="text" name="text" class=" mt-2" id="">
 
-<button type="submit" class="d-block btn btn-primary">publish</button>
+                    <label for="" class="d-block fs-6 formtext mb-2" style="color: rgb(223, 223, 223);">Post</label>
+                    <textarea name="essay" id="" cols="165" rows="7"></textarea>
 
-</form>
+                    <button type="submit" class="d-block btn btn-primary"  style="border:none;background-color: rgb(204, 70, 47);">publish</button>
 
-    </div>
-</section>
+                </form>
 
+            </div>
+        </section>
 
-<%- include('partial/footer') -%>
+        <%- include('partial/footer') -%>

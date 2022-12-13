@@ -2,16 +2,16 @@
 
 <section id="body">
     <div class="container ps-4">
-        <h1 class="mt-4 mb-2">Home</h1>
-        <p class="m-0"><%= para %></p>
+        <h1 class="mt-4 mb-2 " style="color: rgb(223, 223, 223);">Home</h1>
+        <p class="m-0" style="color: grey;"><%= para %></p>
 
     </div>
 </section>
 <section id="body">
     <div class="container ps-4">
         <% for(let i=0;i<array.length;i++){ %>
-        <h2 class="mt-4 mb-2"><%= array[i].text %></h2>
-        <p class="m-0"><%= array[i].essay.substring(0,100) %>..... <a href="/posts/<%= array[i]._id %>">Read More</a> </p>
+        <h2 class="mt-4 mb-2 "style="color: rgb(223, 223, 223);"><%= array[i].text %></h2>
+        <p class="m-0" style="color: grey;"><%= array[i].essay.substring(0,100) %>..... <a href="/posts/<%= array[i]._id %>">Read More</a> </p>
        <% } %>
     </div>
 </section>

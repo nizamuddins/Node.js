@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 var _ = require('lodash');
 const config = require("./config");
 const mongoose = require('./mongoose');
-const mongodb = require('mongodb');
 
 const app = express();
 
@@ -52,7 +51,7 @@ array.forEach((a)=>{
 
 })
 app.post('/compose',async (req,res)=>{
-
+    console.log(req.body)
 let data1 = new mongoose(req.body);
 let result = await data1.save();
 

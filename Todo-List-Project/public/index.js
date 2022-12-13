@@ -15,31 +15,6 @@ $(document).keydown((e)=>{
            }
 });
 
-let width = window.innerWidth;
-
-if(width < 1230){
-
-
-$(".box").remove();
-body.css("background-image","none")
-body.text("Error!")
-
-
-
-}
-
-window.addEventListener("resize",(e)=>{
-if(window.innerWidth < 1426){
-    $(".box").remove();
-    body.css("background-image","none")
-
-    body.text("Error!")
-    
-    
-
-}
-})
-
 let head = $(".head").text()
 
 if(head == "Home"){
@@ -73,3 +48,8 @@ if(head == "Home"){
     $('.head').css("background-color","#ff3a3a");
     $('.submit').css("background-color","#ff3a3a");
 }
+
+window.addEventListener("resize",()=>{
+    console.log(window.innerWidth)
+
+})
