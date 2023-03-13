@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const dataSchema = mongoose.Schema({
-    text:String, 
+    text:String,
+    img:{
+        data: Buffer,
+        contentType: String
+    },
     essay:String,
 })
 

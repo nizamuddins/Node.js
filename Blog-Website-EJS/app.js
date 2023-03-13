@@ -36,7 +36,6 @@ app.get('/compose',(req,res)=>{
     })
 app.get('/posts/:parameter',(req,res)=>{
 // const parameter = _.lowerCase(req.params.parameter)
-console.log(req.params.parameter)
 array.forEach((a)=>{
     const a1 = a._id;
     const a2 = a.text;
@@ -51,7 +50,6 @@ array.forEach((a)=>{
 
 })
 app.post('/compose',async (req,res)=>{
-    console.log(req.body)
 let data1 = new mongoose(req.body);
 let result = await data1.save();
 
